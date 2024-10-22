@@ -1,0 +1,12 @@
+map.put do not update existng map it creates new one
+{|}-> this also create new one update the existng one
+
+put and new value also to map | is not able to add new value it just update and return the new map
+
+
+keyword list
+colors=[primary:"red",primary:"red"]
+but in map it will not work 
+
+
+if we are passing keyword list as the last argument in function we can remove [] brackets 

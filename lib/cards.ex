@@ -3,7 +3,7 @@ defmodule Cards do
   Documentation for `Cards`.
   """
   def hello do
-    "hi there"
+    :world
   end
 
   @doc"""
@@ -35,7 +35,7 @@ defmodule Cards do
       iex> deck=Cards.create_deck
       iex> {hand,deck}=Cards.deal(deck,1)
       iex> hand
-      ["ace space"]
+      ["ace of spades"]
 
 
   """

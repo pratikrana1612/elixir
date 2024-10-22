@@ -3,6 +3,9 @@ defmodule CardsTest do
   doctest Cards
 
   test "greets the world" do
-    assert Cards.hello() == :world
+
+    deck_length=length(Cards.create_deck())
+    assert deck_length == 9
+    # assert Cards.hello() == :world
   end
 end
