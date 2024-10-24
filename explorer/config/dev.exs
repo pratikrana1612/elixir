@@ -3,9 +3,9 @@ import Config
 # Configure your database
 config :explorer, Explorer.Repo,
   username: "postgres",
-  password: "postgres",
+  password: "pratik@123",
   hostname: "localhost",
-  database: "explorer_dev",
+  database: "temp",
   stacktrace: true,
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
