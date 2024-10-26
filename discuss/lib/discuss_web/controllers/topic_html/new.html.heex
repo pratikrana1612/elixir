@@ -1,0 +1,5 @@
+<.form for={@form} phx-change="validate" phx-submit="save">
+  <.input type="text" field={@form[:username]} />
+  <.input type="email" field={@form[:email]} />
+  <button>Save</button>
+</.form>
