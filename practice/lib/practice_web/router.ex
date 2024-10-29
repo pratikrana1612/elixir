@@ -1,11 +1,13 @@
-defmodule DiscussWeb.Router do
-  use DiscussWeb, :router
+defmodule PracticeWeb.Router do
+  use PracticeWeb, :router
+  use Phoenix.Router
+  import Phoenix.LiveView.Router
 
   pipeline :browser do
     plug(:accepts, ["html"])
     plug(:fetch_session)
     plug(:fetch_live_flash)
-    plug(:put_root_layout, html: {DiscussWeb.Layouts, :root})
+    plug(:put_root_layout, html: {PracticeWeb.Layouts, :root})
     plug(:protect_from_forgery)
     plug(:put_secure_browser_headers)
   end
@@ -14,21 +16,20 @@ defmodule DiscussWeb.Router do
     plug(:accepts, ["json"])
   end
 
-  scope "/", DiscussWeb do
+  scope "/", PracticeWeb do
     pipe_through(:browser)
 
     get("/", PageController, :home)
-    get("/topics/new", TopicController, :new)
-    post "/topics",TopicController, :create
+    live("/light", LightLive)
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", DiscussWeb do
+  # scope "/api", PracticeWeb do
   #   pipe_through :api
   # end
 
   # Enable LiveDashboard and Swoosh mailbox preview in development
-  if Application.compile_env(:discuss, :dev_routes) do
+  if Application.compile_env(:practice, :dev_routes) do
     # If you want to use the LiveDashboard in production, you should put
     # it behind authentication and allow only admins to access it.
     # If your application does not have an admins-only section yet,
@@ -39,7 +40,7 @@ defmodule DiscussWeb.Router do
     scope "/dev" do
       pipe_through(:browser)
 
-      live_dashboard("/dashboard", metrics: DiscussWeb.Telemetry)
+      live_dashboard("/dashboard", metrics: PracticeWeb.Telemetry)
       forward("/mailbox", Plug.Swoosh.MailboxPreview)
     end
   end

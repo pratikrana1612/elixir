@@ -6,5 +6,8 @@ defmodule DiscussWeb.TopicHTML do
   """
   use DiscussWeb, :html
 
+  import Phoenix.HTML.Form
+  # import DiscussWeb.ErrorHelpers  # If you have custom error helpers defined
+
   embed_templates "topic_html/*"
 end

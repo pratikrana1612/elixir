@@ -5,7 +5,7 @@ defmodule DiscussWeb.TopicController do
 
   def new(conn, _params) do
     changeset = Topic.changeset(%Topic{}, %{})
-    render(conn, :new, form: %{username: "name", email: "mail"})
+    render(conn, :new,changeset: changeset)
   end
 
   def create(conn, %{"topic" => topic_params}) do

@@ -1,7 +1,7 @@
 import Config
 
 # Configure your database
-config :discuss, Discuss.Repo,
+config :practice, Practice.Repo,
   username: "postgres",
   password: "pratik@123",
   hostname: "localhost",
@@ -16,17 +16,17 @@ config :discuss, Discuss.Repo,
 # The watchers configuration can be used to run external
 # watchers to your application. For example, we can use it
 # to bundle .js and .css sources.
-config :discuss, DiscussWeb.Endpoint,
+config :practice, PracticeWeb.Endpoint,
   # Binding to loopback ipv4 address prevents access from other machines.
   # Change to `ip: {0, 0, 0, 0}` to allow access from other machines.
   http: [ip: {127, 0, 0, 1}, port: 4000],
   check_origin: false,
   code_reloader: true,
   debug_errors: true,
-  secret_key_base: "YlCxH01o6zcgBv5R/LY1RyLvbD29jIBvwniHVL0aJGqpVeH/Cw4kJcT6ZOxlfvpE",
+  secret_key_base: "lGW0NVyxSH1u/VX8q0R+OZo5+fbS1MSAjU6Xm60NdJT9bBEvMP8/VungWDUzOMPh",
   watchers: [
-    esbuild: {Esbuild, :install_and_run, [:discuss, ~w(--sourcemap=inline --watch)]},
-    tailwind: {Tailwind, :install_and_run, [:discuss, ~w(--watch)]}
+    esbuild: {Esbuild, :install_and_run, [:practice, ~w(--sourcemap=inline --watch)]},
+    tailwind: {Tailwind, :install_and_run, [:practice, ~w(--watch)]}
   ]
 
 # ## SSL Support
@@ -53,17 +53,17 @@ config :discuss, DiscussWeb.Endpoint,
 # different ports.
 
 # Watch static and templates for browser reloading.
-config :discuss, DiscussWeb.Endpoint,
+config :practice, PracticeWeb.Endpoint,
   live_reload: [
     patterns: [
       ~r"priv/static/(?!uploads/).*(js|css|png|jpeg|jpg|gif|svg)$",
       ~r"priv/gettext/.*(po)$",
-      ~r"lib/discuss_web/(controllers|live|components)/.*(ex|heex)$"
+      ~r"lib/practice_web/(controllers|live|components)/.*(ex|heex)$"
     ]
   ]
 
 # Enable dev routes for dashboard and mailbox
-config :discuss, dev_routes: true
+config :practice, dev_routes: true
 
 # Do not include metadata nor timestamps in development logs
 config :logger, :console, format: "[$level] $message\n"
